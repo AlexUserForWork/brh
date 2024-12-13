@@ -45,7 +45,11 @@ function App() {
             onClick={() => setIsPlayMusic((prev) => !prev)}
             className='fixed-music bottom-4 right-4 px-4 py-2 text-white rounded'
          >
-            {!isPlayMusic ? <img src={pause} alt="pause" /> : <img src={play} alt="play" />}
+            {!isPlayMusic ? (
+               <img src={pause} alt='pause' />
+            ) : (
+               <img src={play} alt='play' />
+            )}
          </button>
          <FullscreenPopup setIsPlayMusic={setIsPlayMusic}></FullscreenPopup>
          <div className='relative pt-12'>
@@ -55,12 +59,16 @@ function App() {
                   <img src={logo} alt='' />
                   <div className='flex gap-4'>
                      <svg
+                        onClick={() =>
+                           (window.location.href =
+                              'https://www.dextools.io/app/en/solana/pair-explorer/ADDntN9sSGQiSSyZ1ZYKJ3C93RzEcp9r3S6ZfCfpump')
+                        }
                         width='30'
                         height='30'
                         viewBox='0 0 30 30'
                         fill='none'
                         xmlns='http://www.w3.org/2000/svg'
-                        className='header__btn'
+                        className='header__btn cursor-pointer'
                      >
                         <g>
                            <path
@@ -72,12 +80,15 @@ function App() {
                         </g>
                      </svg>
                      <svg
+                        onClick={() =>
+                           (window.location.href = 'https://t.me/BruuuhSol')
+                        }
                         width='30'
                         height='30'
                         viewBox='0 0 30 30'
                         fill='none'
                         xmlns='http://www.w3.org/2000/svg'
-                        className='header__btn'
+                        className='header__btn cursor-pointer'
                      >
                         <path
                            fill-rule='evenodd'
@@ -88,12 +99,15 @@ function App() {
                      </svg>
 
                      <svg
+                        onClick={() =>
+                           (window.location.href = 'https://x.com/BruuuhSol')
+                        }
                         width='30'
                         height='30'
                         viewBox='0 0 30 30'
                         fill='none'
                         xmlns='http://www.w3.org/2000/svg'
-                        className='header__btn'
+                        className='header__btn cursor-pointer'
                      >
                         <path
                            d='M21.8879 3.76904H25.5679L17.4879 13.7021L26.9279 27.1766H19.5199L13.7199 18.9883L7.07992 27.1766H3.39992L11.9599 16.5525L2.91992 3.76904H10.5119L15.7519 11.2491L21.8879 3.76904ZM20.5999 24.8445H22.6399L9.43992 6.01479H7.24792L20.5999 24.8445Z'
@@ -105,7 +119,15 @@ function App() {
             </div>
             <div className='relative w-full flex flex-col justify-center items-center gap-8 z-10 mt-16'>
                <img className='hero__logo' src={heroLogo} alt='' />
-               <button className='hero__btn'>BUY $BRUUUH</button>
+               <button
+                  onClick={() =>
+                     (window.location.href =
+                        'https://raydium.io/swap/?inputMint=sol&outputMint=ADDntN9sSGQiSSyZ1ZYKJ3C93RzEcp9r3S6ZfCfpump')
+                  }
+                  className='hero__btn'
+               >
+                  BUY $BRUUUH
+               </button>
                <div className='relative z-10 top-[-100px] mt-12'>
                   <img className='' src={heroBruh} alt='' />
                   <img
@@ -124,7 +146,7 @@ function App() {
                <img className='about__buildings' src={aboutBuildings} alt='' />
                <div className='about__container container'>
                   <div className='about__left'>
-                     <span className='about__badge'>bruh’s mission</span>
+                     <span className='about__badge'>bruuuh’s mission</span>
                      <p className='about__text'>
                         Meet $BRUUUH, the lazy green monster that doesn't give a
                         damn about anything or anyone. $BRUUUH is sick of
@@ -141,7 +163,23 @@ function App() {
                         <p className='about__contract'>
                            ADDntN9sSGQiSSyZ1ZYKJ3C93RzEcp9r3S6ZfCfpump
                         </p>
-                        <button className='about__copy'>Copy</button>
+                        <button
+                           onClick={() => {
+                              navigator.clipboard
+                                 .writeText(
+                                    "ADDntN9sSGQiSSyZ1ZYKJ3C93RzEcp9r3S6ZfCfpump"
+                                 )
+                                 .then(() => {
+                                    alert('Copied to clipboard!');
+                                 })
+                                 .catch((err) => {
+                                    console.error('Failed to copy: ', err);
+                                 });
+                           }}
+                           className='about__copy'
+                        >
+                           Copy
+                        </button>
                      </div>
                   </div>
                   <img
