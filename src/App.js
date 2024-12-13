@@ -27,18 +27,29 @@ function App() {
    const audio = new Audio(music);
 
    useEffect(() => {
-      if (isPlayMusic) {
+      const handleEnded = () => {
+         audio.currentTime = 0;
          audio.play();
+      };
+
+      if (isPlayMusic) {
+         if (audio.paused) {
+            audio.play();
+         }
+         audio.addEventListener('ended', handleEnded);
       } else {
          audio.pause();
          audio.currentTime = 0;
+         audio.removeEventListener('ended', handleEnded);
       }
 
       return () => {
          audio.pause();
          audio.currentTime = 0;
+         audio.removeEventListener('ended', handleEnded);
       };
    }, [isPlayMusic]);
+
    return (
       <>
          <button
@@ -167,7 +178,7 @@ function App() {
                            onClick={() => {
                               navigator.clipboard
                                  .writeText(
-                                    "ADDntN9sSGQiSSyZ1ZYKJ3C93RzEcp9r3S6ZfCfpump"
+                                    'ADDntN9sSGQiSSyZ1ZYKJ3C93RzEcp9r3S6ZfCfpump'
                                  )
                                  .then(() => {
                                     alert('Copied to clipboard!');
