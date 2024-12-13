@@ -53,6 +53,7 @@ code {
    margin: 0 auto 60px auto;
 }
 
+
 .hero__btn {
    background: #96de7c;
    border: 5px solid #263d1e;
@@ -67,6 +68,46 @@ code {
    cursor: pointer;
 }
 .hero__btn:hover {
+   background: #263d1e;
+   color: #96de7c;
+}
+
+.popup_close_btn {
+   background: #96de7c;
+   border: 5px solid #263d1e;
+   color: #263d1e;
+   font-size: 28px;
+   text-transform: uppercase;
+   margin-top: 10px;
+   padding: 6px 12px;
+   border-radius: 24px;
+   margin-bottom: 32px;
+   transition: background 200ms ease-in-out, color 200ms ease-in-out;
+   font-family: 'SA Long Beach', system-ui;
+   cursor: pointer;
+}
+
+.popup_close_btn:hover {
+   background: #263d1e;
+   color: #96de7c;
+}
+
+.popup_follow_btn {
+   background: #3c7925;
+   border: 5px solid #263d1e;
+   color: #263d1e;
+   font-size: 28px;
+   text-transform: uppercase;
+   margin-top: 10px;
+   padding: 6px 12px;
+   border-radius: 24px;
+   margin-bottom: 32px;
+   transition: background 200ms ease-in-out, color 200ms ease-in-out;
+   font-family: 'SA Long Beach', system-ui;
+   cursor: pointer;
+}
+
+.popup_follow_btn:hover {
    background: #263d1e;
    color: #96de7c;
 }
