@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import icon from './assets/favicon.png';
+import icon from './assets/hero-clouds.svg';
 
 const FullscreenPopup = ({ setIsPlayMusic }) => {
    const [isOpen, setIsOpen] = useState(true);
@@ -12,7 +12,7 @@ const FullscreenPopup = ({ setIsPlayMusic }) => {
                   <img
                      src={icon}
                      alt='Popup Content'
-                     className='mx-auto mb-4'
+                     className='absolute w-full h-full object-cover'
                   />
 
                   <div className='flex justify-center gap-4 pt-8'>
@@ -25,14 +25,6 @@ const FullscreenPopup = ({ setIsPlayMusic }) => {
                      >
                         Close
                      </button>
-                     <a
-                        href='https://x.com/BruuuhSol'
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        className='popup_follow_btn'
-                     >
-                        Go to Link
-                     </a>
                   </div>
                </div>
             </div>
