@@ -128,10 +128,10 @@ function App() {
                >
                   BUY $BRUUUH
                </button>
-               <div className='relative z-10 top-[-100px] mt-12'>
+               <div className='relative z-10 top-0 md:top-[-100px] mt-12'>
                   <img className='' src={heroBruh} alt='' />
                   <img
-                     className='absolute top-[-120px] left-[320px]'
+                     className='absolute top-[120px] md:top-[-120px] w-1/3 md:w-full left-[200px] md:left-[320px]'
                      src={heroMsg}
                      alt=''
                   />
@@ -230,7 +230,7 @@ function App() {
                <div class='faq__container container'>
                   <div class='faq__col'>
                      <iframe
-                        src='https://app.uniswap.org/#/swap?outputCurrency=ADDntN9sSGQiSSyZ1ZYKJ3C93RzEcp9r3S6ZfCfpump'
+                        src='https://jup.ag/swap/SOL-USDC'
                         height='500px'
                         width='100%'
                         data-ruffle-polyfilled=''
